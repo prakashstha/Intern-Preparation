@@ -1,6 +1,18 @@
 package Queue;
 
-
+/**
+ * <p>
+ * 	 Linked list implementation for queue. The following two main operations are implemented 
+ * 	 efficiently. In a Queue data structure, we maintain two pointers, front and rear. The 
+ * 	 front points the first item of queue and rear points to last item.
+ * </p>
+ * <ul>
+ * 	 <li> enQueue() This operation adds a new node after rear and moves rear to the next node. </li>
+ *	 <li> deQueue() This operation removes the front node and moves front to the next node. </li>
+ * </ul>
+ * @author Prakash
+ * @param <T>
+ */
 public class MyQueue<T>{
 	private int size = 0;
 	class QueueNode<T>{
@@ -13,7 +25,7 @@ public class MyQueue<T>{
 	
 	QueueNode<T> first; 
 	QueueNode<T> last;
-	public void add(T data){
+	public void enqueue(T data){
 		QueueNode<T> newNode = new QueueNode<T>(data);
 		/* queue is empty*/
 		if(last == null){
@@ -26,7 +38,7 @@ public class MyQueue<T>{
 		size++;
 	}
 	
-	public T remove(){
+	public T dequeue(){
 		/* queue is empty */
 		if(first == null) throw new IllegalStateException("Queue is empty!!");
 		
@@ -51,5 +63,7 @@ public class MyQueue<T>{
 	public int size(){
 		return size;
 	}
+	
+	
 	
 }
